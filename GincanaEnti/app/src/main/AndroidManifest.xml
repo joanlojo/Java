@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.enti.joan.gincanaenti">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_inicio"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Principal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShowHints"
+            android:label="@string/title_activity_show_hints"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".put_Pista"
+            android:label="@string/title_activity_put__pista"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Salir"/>
+            //android:label="@string/title_activity_salir"
+            //android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
+
+</manifest>
