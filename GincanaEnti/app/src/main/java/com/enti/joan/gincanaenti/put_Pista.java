@@ -13,7 +13,13 @@ import android.widget.Spinner;
 
 public class put_Pista extends AppCompatActivity {
     private Button salir;
-
+    EditText descripcion = (EditText)findViewById(R.id.des);
+    EditText identificador = (EditText)findViewById(R.id.id);
+    Spinner option = (Spinner)findViewById(R.id.spinner);
+    EditText latitud = (EditText)findViewById(R.id.latitud);
+    EditText longitud = (EditText)findViewById(R.id.longitud);
+    EditText idnextPista = (EditText)findViewById(R.id.idNext);
+    boolean relleno = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,29 +34,32 @@ public class put_Pista extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.enviarP);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText descripcio = (EditText)findViewById(R.id.des);
-                EditText identificador = (EditText)findViewById(R.id.id);
-                Spinner spinner = (Spinner)findViewById(R.id.spinner);
-                EditText latitud = (EditText)findViewById(R.id.latitud);
-                EditText longitud = (EditText)findViewById(R.id.longitud);
-                EditText idnextPista = (EditText)findViewById(R.id.idNext);
-                Intent i = new Intent();
-                i.putExtra("des", descripcio.getText().toString());
-                i.putExtra("id", identificador.getText().toString());
-                i.putExtra("tipo",spinner.getSelectedItem().toString());
-               // i.putExtra("tipo", spinner.getText().toString());
-                i.putExtra("latitud", latitud.getText().toString());
-                i.putExtra("longitud", longitud.getText().toString());
-                i.putExtra("idNext", idnextPista.getText().toString());
-                setResult(RESULT_OK, i);
-                finish();
+                if(!descripcion.getText().toString().equals("") && !identificador.getText().toString().equals("") && !latitud.getText().toString().equals("") && !longitud.getText().toString().equals("") && !idnextPista.getText().toString().equals("")){
+                    Pista temp = null;
+                    if(option.getSelectedItemPosition()==0){
+                        pistaImag pistaI = new pistaImag(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                        PistaGlobal.pistaL.addPista(pistaI);
+                    }
+                    else if(option.getSelectedItemPosition()==1){
+                        pistaText pistaT = new pistaText(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                        PistaGlobal.pistaL.addPista(pistaT);
+                    }
+                    else if(option.getSelectedItemPosition()==2){
+                        pistaAudio pistaA = new pistaAudio(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                        PistaGlobal.pistaL.addPista(pistaA);
+                    }
+                   // setResult(RESULT_OK);
+                    finish();
+                }
+                else {
+                      Snackbar.make(view, "Faltan campos por rellenar", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+
             }
         });
     }

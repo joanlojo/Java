@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,9 +17,6 @@ import java.util.ArrayList;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     protected View.OnClickListener onClickListener;
-
-    protected ArrayList<String> listaVersiones;    //Versions a mostrar
-
     protected LayoutInflater inflador;             //Crea Layouts a partir de l'XML list_item
 
     protected Context contexto;                    //Necessari per l'inflater
@@ -26,10 +25,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
 
 
-    public Adaptador(Context _contexto, ArrayList<String> _listaVersiones) {
+    public Adaptador(Context _contexto) {
 
         this.contexto = _contexto;
-        this.listaVersiones = _listaVersiones;
 
 //TO DO: assignar la llista de versions a la propietat
 
@@ -52,36 +50,24 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     //Creem el ViewHolder, amb els elements que cal mostrar
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
-
-
         //Posem com a propietats tots els views que conté cada ítem de la llista
-
+        EditText descripcion = (EditText)itemView.findViewById(R.id.des);
+        EditText identificador = (EditText)itemView.findViewById(R.id.id);
+        Spinner option = (Spinner)itemView.findViewById(R.id.spinner);
+        EditText latitud = (EditText)itemView.findViewById(R.id.latitud);
+        EditText longitud = (EditText)itemView.findViewById(R.id.longitud);
+        EditText idnextPista = (EditText)itemView.findViewById(R.id.idNext);
         // (en aquest cas només un TextView per a guardar el nom de la versió
 
         public TextView nombreVersion;
 
-
-
         public ViewHolder(View itemView) {
-
             super(itemView);
-
             //TO DO: assignar a la propietat nomVersió el TextView que s'ha especificat al layout amb el seu ID
-            this.nombreVersion.findViewById(R.id.nombreVersion);//???
-
+            nombreVersion = (TextView)itemView.findViewById(R.id.nombreVersion);
             //END TO DO
-
-
-
         }
-
     }
-
-
-
-
-
     //Mètode obligatori que genera un ViewHolder a partir de l'id de l'XML list_item
 
     @Override
@@ -89,6 +75,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = inflador.inflate(R.layout.lista_items, null);
         v.setOnClickListener(onClickListener);
+//creo la variables
 
         return new ViewHolder(v);
 
@@ -103,8 +90,14 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     @Override
 
     public void onBindViewHolder(ViewHolder holder, int posicio) {
+        //hago el view holder de cada
+        Pista p= PistaGlobal.pistaL.obtenerP(posicio);
+        holder.identificador.setText(p.getId().toString());
+        holder.idnextPista.setText(p.getIdNext().toString());
+        //holder.latitud.setText(p.getPosition().toString());
+        holder.descripcion.setText(p.getPosition().toString());
 
-        holder.nombreVersion.setText(listaVersiones.get(posicio));
+
 
     }
 
@@ -117,7 +110,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 //TO DO: retornar el número d'elements de llistaVersions
 
 
-        return  0;
+        return PistaGlobal.pistaL.getLenght();
 //END TO DO
 
     }

@@ -9,13 +9,15 @@ import java.util.Iterator;
  */
 
 public class listaPistas {
-    ArrayList<Pista>listaPista=new ArrayList<Pista>();
+    public static ArrayList<Pista>listaPista=new ArrayList<Pista>();
 
-    public void addPista(Pista p){
+    public static void addPista(Pista p){
         listaPista.add(p);
     }
-
-    public Pista findPista(String id) {
+    public static Pista obtenerP(int a){
+        return listaPista.get(a);
+    }
+    public static Pista findPista(String id) {
         Pista p = null;
         Iterator<Pista> i = listaPista.iterator();
         boolean found = false;
@@ -33,7 +35,7 @@ public class listaPistas {
         }
     }
 
-    public void eliminarPista(String id) {
+    public static void eliminarPista(String id) {
         Pista p;
         boolean find = false;
 
@@ -47,7 +49,7 @@ public class listaPistas {
         }
     }
 
-    public String pistaSeguent(String id) {
+    public static String pistaSeguent(String id) {
         Pista p = null;
         boolean find = false;
 
@@ -62,7 +64,7 @@ public class listaPistas {
         else return "";
     }
 
-    public void llistarPistes(){
+    public static void llistarPistes(){
         Pista p;
 
         Iterator<Pista> i = listaPista.iterator();
@@ -71,5 +73,8 @@ public class listaPistas {
           //  Toast.makeText(this, p.getId(),Toast.LENGTH_SHORT).show();
             p.getId();
         }
+    }
+    public static int getLenght(){
+        return listaPista.size();
     }
 }
