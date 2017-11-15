@@ -4,7 +4,39 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/nombreVersion"
+        android:id="@+id/des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Cupcake"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Cupcake"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/des"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/idNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Cupcake"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/id"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/latitud"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -12,16 +44,26 @@
         android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_marginStart="200dp" />
+
+    <TextView
+        android:id="@+id/longitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Cupcake"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@+id/latitud"
+        android:layout_alignStart="@+id/latitud" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/icono_prueba"
-        android:layout_marginTop="116dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="18dp" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

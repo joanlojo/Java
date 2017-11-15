@@ -9,6 +9,7 @@ public abstract class Pista {
     private String idNext;
     private String descripcion;
     private Coord position;
+    private double latitud, longitud;
 
     public Pista(){
         this.id = "";
@@ -20,6 +21,8 @@ public abstract class Pista {
         this.idNext = idNext;
         this.descripcion = descripcion;
         this.position = new Coord(latitud, longitud);
+        this.latitud = latitud;
+        this.longitud = longitud;
     }
 
     public void setId(String id){this.id = id;}
@@ -36,6 +39,8 @@ public abstract class Pista {
     public Coord getPosition(){
         return(this.position);
     }
+    public double getLatitud(){return(this.latitud);}
+    public double getLongitud(){return(this.longitud);}
 
     public abstract void printInfo();
 

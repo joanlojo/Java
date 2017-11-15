@@ -11,12 +11,16 @@ import java.util.Iterator;
 public class listaPistas {
     public static ArrayList<Pista>listaPista=new ArrayList<Pista>();
 
-    public static void addPista(Pista p){
+    public static void addPista(Pista p)
+    {
         listaPista.add(p);
     }
-    public static Pista obtenerP(int a){
+
+    public static Pista obtenerP(int a)
+    {
         return listaPista.get(a);
     }
+
     public static Pista findPista(String id) {
         Pista p = null;
         Iterator<Pista> i = listaPista.iterator();
@@ -74,7 +78,7 @@ public class listaPistas {
             p.getId();
         }
     }
-    public static int getLenght(){
+    public static int getLength(){
         return listaPista.size();
     }
 }

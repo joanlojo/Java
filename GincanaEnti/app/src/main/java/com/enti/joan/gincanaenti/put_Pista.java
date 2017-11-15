@@ -13,17 +13,20 @@ import android.widget.Spinner;
 
 public class put_Pista extends AppCompatActivity {
     private Button salir;
-    EditText descripcion = (EditText)findViewById(R.id.des);
-    EditText identificador = (EditText)findViewById(R.id.id);
-    Spinner option = (Spinner)findViewById(R.id.spinner);
-    EditText latitud = (EditText)findViewById(R.id.latitud);
-    EditText longitud = (EditText)findViewById(R.id.longitud);
-    EditText idnextPista = (EditText)findViewById(R.id.idNext);
+
     boolean relleno = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_put__pista);
+
+        final EditText descripcion = (EditText)findViewById(R.id.des);
+        final EditText identificador = (EditText)findViewById(R.id.id);
+        final Spinner option = (Spinner)findViewById(R.id.spinner);
+        final EditText latitud = (EditText)findViewById(R.id.latitud);
+        final EditText longitud = (EditText)findViewById(R.id.longitud);
+        final EditText idnextPista = (EditText)findViewById(R.id.idNext);
+
         salir = (Button)findViewById(R.id.salir);
         salir.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -39,20 +42,20 @@ public class put_Pista extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!descripcion.getText().toString().equals("") && !identificador.getText().toString().equals("") && !latitud.getText().toString().equals("") && !longitud.getText().toString().equals("") && !idnextPista.getText().toString().equals("")){
-                    Pista temp = null;
+                   // Pista temp = null;
                     if(option.getSelectedItemPosition()==0){
                         pistaImag pistaI = new pistaImag(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        PistaGlobal.pistaL.addPista(pistaI);
+                        listaPistas.addPista(pistaI);
                     }
                     else if(option.getSelectedItemPosition()==1){
                         pistaText pistaT = new pistaText(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        PistaGlobal.pistaL.addPista(pistaT);
+                        listaPistas.addPista(pistaT);
                     }
                     else if(option.getSelectedItemPosition()==2){
                         pistaAudio pistaA = new pistaAudio(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        PistaGlobal.pistaL.addPista(pistaA);
+                        listaPistas.addPista(pistaA);
                     }
-                   // setResult(RESULT_OK);
+                    setResult(RESULT_OK);
                     finish();
                 }
                 else {
@@ -61,7 +64,7 @@ public class put_Pista extends AppCompatActivity {
                 }
 
             }
-        });
+       });
     }
 
 }
