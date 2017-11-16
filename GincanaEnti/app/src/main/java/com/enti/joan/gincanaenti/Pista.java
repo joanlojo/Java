@@ -11,6 +11,7 @@ public abstract class Pista {
     private Coord position;
     private double latitud, longitud;
 
+
     public Pista(){
         this.id = "";
         this.idNext = "";

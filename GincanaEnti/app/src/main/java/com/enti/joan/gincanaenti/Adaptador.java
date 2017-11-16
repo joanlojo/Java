@@ -35,8 +35,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         public TextView idNext;
         public TextView latitud;
         public TextView longitud;
-        public ImageView sonido;
-        public ImageView texto;
         public ImageView imagen;
         public Spinner option;
 
@@ -47,7 +45,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             idNext = (TextView)itemView.findViewById(R.id.idNext);
             latitud = (TextView)itemView.findViewById(R.id.latitud);
             longitud = (TextView)itemView.findViewById(R.id.longitud);
-            //option = (Spinner)itemView.findViewById(R.id.);
+            imagen = (ImageView)itemView.findViewById(R.id.imageView);
+            option = (Spinner)itemView.findViewById(R.id.spinner);
         }
     }
     //Mètode obligatori que genera un ViewHolder a partir de l'id de l'XML list_item
@@ -76,7 +75,16 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         holder.latitud.setText(Double.toString(p.getLatitud()));
         holder.longitud.setText(Double.toString(p.getLongitud()));
         // para la imagen, hacer tres ifs segun el spinner y poner la imagen
-       // if(holder.)
+       if(holder.option.getSelectedItemPosition()==0){
+           holder.imagen.setImageResource(R.mipmap.ic_image);
+       }
+        if(holder.option.getSelectedItemPosition()==1){
+            holder.imagen.setImageResource(R.mipmap.ic_texto);
+        }
+        if(holder.option.getSelectedItemPosition()==2){
+            holder.imagen.setImageResource(R.mipmap.ic_music);
+        }
+
 
     }
     //Mètode obligatori que retorna el número d'elements total de la llista
