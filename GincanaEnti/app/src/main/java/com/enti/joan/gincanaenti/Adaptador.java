@@ -70,18 +70,18 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int posicio) {
         Pista p= listaPistas.obtenerP(posicio);
         holder.descripcion.setText("Descripcion: " + p.getDescripcion().toString());
-        holder.id.setText(p.getId().toString());
-        holder.idNext.setText(p.getIdNext().toString());
-        holder.latitud.setText(Double.toString(p.getLatitud()));
-        holder.longitud.setText(Double.toString(p.getLongitud()));
+        holder.id.setText("ID: " + p.getId().toString());
+        holder.idNext.setText("ID Next: " + p.getIdNext().toString());
+        holder.latitud.setText("Lat: " + Double.toString(p.getLatitud()));
+        holder.longitud.setText("Long: " + Double.toString(p.getLongitud()));
         // para la imagen, hacer tres ifs segun el spinner y poner la imagen
-       if(holder.option.getSelectedItemPosition()==0){
+       if(p.getTipo().equals("Imagen")){
            holder.imagen.setImageResource(R.mipmap.ic_image);
        }
-        if(holder.option.getSelectedItemPosition()==1){
+       if(p.getTipo().equals("Texto")){
             holder.imagen.setImageResource(R.mipmap.ic_texto);
         }
-        if(holder.option.getSelectedItemPosition()==2){
+       if(p.getTipo().equals("Audio")){
             holder.imagen.setImageResource(R.mipmap.ic_music);
         }
 

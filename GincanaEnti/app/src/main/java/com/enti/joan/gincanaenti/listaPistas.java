@@ -9,19 +9,34 @@ import java.util.Iterator;
  */
 
 public class listaPistas {
-    public static ArrayList<Pista>listaPista=new ArrayList<Pista>();
+    public static ArrayList<Pista> listaPista = new ArrayList<Pista>();
 
-    public static void addPista(Pista p)
-    {
+    public static void addPista(Pista p) {
         listaPista.add(p);
     }
 
-    public static Pista obtenerP(int a)
-    {
+    public static Pista obtenerP(int a) {
         return listaPista.get(a);
     }
 
-    public static Pista findPista(String id) {
+    /* public static Pista findPista(String id) {
+         Pista p = null;
+         Iterator<Pista> i = listaPista.iterator();
+         boolean found = false;
+
+         while (i.hasNext() && found == false) {
+             p = i.next();
+             if (p.getId() == id) {
+                 found = true;
+             }
+         }
+         if (found == true) {
+             return p;
+         } else {
+             return null;
+         }
+     }*/
+    public static Boolean findPista(String id) {
         Pista p = null;
         Iterator<Pista> i = listaPista.iterator();
         boolean found = false;
@@ -33,9 +48,9 @@ public class listaPistas {
             }
         }
         if (found == true) {
-            return p;
+            return true;
         } else {
-            return null;
+            return false;
         }
     }
 
@@ -81,4 +96,17 @@ public class listaPistas {
     public static int getLength(){
         return listaPista.size();
     }
+   /* public static String getTipo(int a){
+        String tipo = "";
+        if(a == 0){
+            tipo =  "Imagen";
+        }
+        else if(a == 1){
+            tipo = "Texto";
+        }
+        else if(a == 2){
+            tipo = "Sonido";
+        }
+        return tipo ;
+    }*/
 }

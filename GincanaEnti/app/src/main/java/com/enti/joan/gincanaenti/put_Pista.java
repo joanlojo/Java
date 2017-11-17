@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class put_Pista extends AppCompatActivity {
     private Button salir;
@@ -41,22 +42,26 @@ public class put_Pista extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!descripcion.getText().toString().equals("") && !identificador.getText().toString().equals("") && !latitud.getText().toString().equals("") && !longitud.getText().toString().equals("") && !idnextPista.getText().toString().equals("")){
-                   // Pista temp = null;
-                    if(option.getSelectedItemPosition()==0){
-                        pistaImag pistaI = new pistaImag(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        listaPistas.addPista(pistaI);
+                if(!descripcion.getText().toString().equals("") && !identificador.getText().toString().equals("") && !latitud.getText().toString().equals("") && !longitud.getText().toString().equals("") && !idnextPista.getText().toString().equals("")) {
+                    // Pista temp = null;
+                    if (!listaPistas.findPista(identificador.getText().toString())) {
+                        if (option.getSelectedItemPosition() == 0) {
+                            pistaImag pistaI = new pistaImag(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                            listaPistas.addPista(pistaI);
+                        } else if (option.getSelectedItemPosition() == 1) {
+                            pistaText pistaT = new pistaText(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                            listaPistas.addPista(pistaT);
+                        } else if (option.getSelectedItemPosition() == 2) {
+                            pistaAudio pistaA = new pistaAudio(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                            listaPistas.addPista(pistaA);
+                        }
+                        setResult(RESULT_OK);
+                        finish();
                     }
-                    else if(option.getSelectedItemPosition()==1){
-                        pistaText pistaT = new pistaText(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        listaPistas.addPista(pistaT);
+                    else{
+                        Snackbar.make(view, "Mismo id", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                     }
-                    else if(option.getSelectedItemPosition()==2){
-                        pistaAudio pistaA = new pistaAudio(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
-                        listaPistas.addPista(pistaA);
-                    }
-                    setResult(RESULT_OK);
-                    finish();
                 }
                 else {
                       Snackbar.make(view, "Faltan campos por rellenar", Snackbar.LENGTH_LONG)

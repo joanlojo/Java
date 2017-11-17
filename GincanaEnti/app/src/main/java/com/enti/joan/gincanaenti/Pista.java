@@ -10,12 +10,14 @@ public abstract class Pista {
     private String descripcion;
     private Coord position;
     private double latitud, longitud;
+    private String tipo;
 
 
     public Pista(){
         this.id = "";
         this.idNext = "";
         this.descripcion = "";
+        this.tipo = "";
     }
     public  Pista(String id, String idNext, String descripcion, double latitud, double longitud){
         this.id = id;
@@ -43,6 +45,6 @@ public abstract class Pista {
     public double getLatitud(){return(this.latitud);}
     public double getLongitud(){return(this.longitud);}
 
-    public abstract void printInfo();
+    public abstract String getTipo();
 
 }

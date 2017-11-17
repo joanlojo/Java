@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ShowHints extends AppCompatActivity /*Implements View.OnclickListener */{
+public class ShowHints extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> listaVersiones;
     private RecyclerView recyclerView;
     public Adaptador adaptador;
@@ -25,8 +25,6 @@ public class ShowHints extends AppCompatActivity /*Implements View.OnclickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_hints);
 
-        Toast.makeText(this, "Longitud: "+listaPistas.getLength(), Toast.LENGTH_SHORT).show();
-
         btn_salir = (Button)findViewById(R.id.btn_salir);
         btn_salir.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -36,7 +34,7 @@ public class ShowHints extends AppCompatActivity /*Implements View.OnclickListen
         });
         recyclerView =(RecyclerView)findViewById(R.id.recycler_view);
         adaptador = new Adaptador(this);
-        //adaptador.setOnClickListener(this);
+        adaptador.setOnClickListener(this);
         recyclerView.setAdapter(adaptador);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
