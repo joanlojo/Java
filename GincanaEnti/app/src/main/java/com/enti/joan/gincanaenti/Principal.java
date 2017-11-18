@@ -3,6 +3,7 @@ package com.enti.joan.gincanaenti;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -15,6 +16,10 @@ public class Principal extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);//la R guarda los identificadores de todos los recursos, y los divide por recursos de string, layouts..
+
+      //  Toolbar toolbar = (Toolbar)findViewById(R.id.appbar);
+        //setSupportActionBar(toolbar);
+
     }
     public void showPista(View view){
         pistaImag pistaI = new pistaImag("35", "36", "prueba", 2, 5, "imag");

@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ShowHints extends AppCompatActivity implements View.OnClickListener {
-    private ArrayList<String> listaVersiones;
+    //private ArrayList<String> listaVersiones;
     private RecyclerView recyclerView;
     public Adaptador adaptador;
     private Button btn_salir;
@@ -23,9 +23,10 @@ public class ShowHints extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_hints);
 
+        setContentView(R.layout.activity_show_hints);
         btn_salir = (Button)findViewById(R.id.btn_salir);
+
         btn_salir.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -63,8 +64,9 @@ public class ShowHints extends AppCompatActivity implements View.OnClickListener
 
     //detectar click sobre la lista
     public void onClick(View v){
-        String s=listaVersiones.get(recyclerView.getChildAdapterPosition(v));
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        Pista p = listaPistas.listaPista.get(recyclerView.getChildAdapterPosition(v));
+        listaPistas.eliminarPista(p.getId());
+        recyclerView.removeAllViews();
     }
 
 

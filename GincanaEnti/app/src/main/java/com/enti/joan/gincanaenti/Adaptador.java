@@ -63,10 +63,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public void setOnClickListener(View.OnClickListener onClickListener){
         this.onClickListener = onClickListener;
     }
+
     // Mètode obligatori que ens permet especificar què posar als views de cada item
-
     @Override
-
     public void onBindViewHolder(ViewHolder holder, int posicio) {
         Pista p= listaPistas.obtenerP(posicio);
         holder.descripcion.setText("Descripcion: " + p.getDescripcion().toString());
@@ -84,16 +83,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
        if(p.getTipo().equals("Audio")){
             holder.imagen.setImageResource(R.mipmap.ic_music);
         }
-
-
     }
     //Mètode obligatori que retorna el número d'elements total de la llista
-
     @Override public int getItemCount() {
-
         return listaPistas.getLength();
-//END TO DO
-
     }
-
 }
