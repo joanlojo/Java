@@ -45,6 +45,6 @@ public abstract class Pista {
     public double getLatitud(){return(this.latitud);}
     public double getLongitud(){return(this.longitud);}
 
-    public abstract String getTipo();
+    public abstract int getTipo();
 
 }

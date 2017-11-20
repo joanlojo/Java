@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ShowHints extends AppCompatActivity implements View.OnClickListener {
+public class ShowHints extends AppCompatActivity implements View.OnLongClickListener {
     //private ArrayList<String> listaVersiones;
     private RecyclerView recyclerView;
     public Adaptador adaptador;
@@ -35,7 +35,7 @@ public class ShowHints extends AppCompatActivity implements View.OnClickListener
         });
         recyclerView =(RecyclerView)findViewById(R.id.recycler_view);
         adaptador = new Adaptador(this);
-        adaptador.setOnClickListener(this);
+        adaptador.setonLongClickListener(this);
         recyclerView.setAdapter(adaptador);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -63,10 +63,11 @@ public class ShowHints extends AppCompatActivity implements View.OnClickListener
     }
 
     //detectar click sobre la lista
-    public void onClick(View v){
+    public boolean onLongClick(View v){
         Pista p = listaPistas.listaPista.get(recyclerView.getChildAdapterPosition(v));
         listaPistas.eliminarPista(p.getId());
         recyclerView.removeAllViews();
+        return true;
     }
 
 

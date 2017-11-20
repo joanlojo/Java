@@ -19,7 +19,7 @@ public class listaPistas {
         return listaPista.get(a);
     }
 
-    /* public static Pista findPista(String id) {
+     public static Pista findPista(String id) {
          Pista p = null;
          Iterator<Pista> i = listaPista.iterator();
          boolean found = false;
@@ -35,24 +35,7 @@ public class listaPistas {
          } else {
              return null;
          }
-     }*/
-    public static Boolean findPista(String id) {
-        Pista p = null;
-        Iterator<Pista> i = listaPista.iterator();
-        boolean found = false;
-
-        while (i.hasNext() && found == false) {
-            p = i.next();
-            if (p.getId() == id) {
-                found = true;
-            }
-        }
-        if (found == true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+     }
 
     public static void eliminarPista(String id) {
         Pista p;

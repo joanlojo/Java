@@ -22,6 +22,6 @@ public class pistaImag extends Pista {
     public void setPath(String path){this.path = path;}
     public String getPath(){return(this.path);}
 
-    public String getTipo(){return this.tipo;}
+    public int getTipo(){return R.mipmap.ic_image;}
 
 }

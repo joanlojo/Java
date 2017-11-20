@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
-    protected View.OnClickListener onClickListener;
+    protected View.OnLongClickListener onlongClickListener;
     protected LayoutInflater inflador;             //Crea Layouts a partir de l'XML list_item
     protected Context contexto;                    //Necessari per l'inflater
 
@@ -55,13 +55,13 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = inflador.inflate(R.layout.lista_items, null);
-        v.setOnClickListener(onClickListener);
+        v.setOnLongClickListener(onlongClickListener);
         return new ViewHolder(v);
 
     }
     //metodo para detectar el lcick sobre un elemento de la lista
-    public void setOnClickListener(View.OnClickListener onClickListener){
-        this.onClickListener = onClickListener;
+    public void setonLongClickListener(View.OnLongClickListener onClickListener){
+        this.onlongClickListener = onClickListener;
     }
 
     // Mètode obligatori que ens permet especificar què posar als views de cada item
@@ -74,16 +74,9 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         holder.latitud.setText("Lat: " + Double.toString(p.getLatitud()));
         holder.longitud.setText("Long: " + Double.toString(p.getLongitud()));
         // para la imagen, hacer tres ifs segun el spinner y poner la imagen
-       if(p.getTipo().equals("Imagen")){
-           holder.imagen.setImageResource(R.mipmap.ic_image);
+        int k=p.getTipo();
+           holder.imagen.setImageResource(k);
        }
-       if(p.getTipo().equals("Texto")){
-            holder.imagen.setImageResource(R.mipmap.ic_texto);
-        }
-       if(p.getTipo().equals("Audio")){
-            holder.imagen.setImageResource(R.mipmap.ic_music);
-        }
-    }
     //Mètode obligatori que retorna el número d'elements total de la llista
     @Override public int getItemCount() {
         return listaPistas.getLength();

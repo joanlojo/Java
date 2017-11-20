@@ -7,7 +7,8 @@
     tools:context="com.enti.joan.gincanaenti.put_Pista">
 
 
-    <include layout="@layout/content_put__pista" />
+    <include layout="@layout/content_put__pista"
+        android:layout_height="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/enviarP"

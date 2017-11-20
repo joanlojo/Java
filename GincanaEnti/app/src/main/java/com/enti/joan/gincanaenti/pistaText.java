@@ -23,5 +23,5 @@ public class pistaText extends Pista {
     public String getDes(){return(this.des);}
 
 
-    public String getTipo(){return (this.tipo);}
+    public int getTipo(){return R.mipmap.ic_texto;}
 }
