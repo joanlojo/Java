@@ -1,9 +1,11 @@
 package com.enti.joan.gincanaenti;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -64,11 +66,26 @@ public class ShowHints extends AppCompatActivity implements View.OnLongClickList
 
     //detectar click sobre la lista
     public boolean onLongClick(View v){
-        Pista p = listaPistas.listaPista.get(recyclerView.getChildAdapterPosition(v));
-        listaPistas.eliminarPista(p.getId());
-        recyclerView.removeAllViews();
+
+        final View k=v;
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Eliminar pista");
+        alertDialogBuilder.setMessage("Estas seguro que deseas eliminar la pista de ID: " + listaPistas.listaPista.get(recyclerView.getChildAdapterPosition(v)).getId()+" ?");
+        alertDialogBuilder.setPositiveButton("ok",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Pista p = listaPistas.listaPista.get(recyclerView.getChildAdapterPosition(k));
+                        listaPistas.eliminarPista(p.getId());
+                        recyclerView.removeAllViews();
+                    }
+                });
+        alertDialogBuilder.setNegativeButton("cancel",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
         return true;
     }
-
-
 }

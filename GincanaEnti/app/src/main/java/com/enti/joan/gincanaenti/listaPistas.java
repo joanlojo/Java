@@ -24,13 +24,13 @@ public class listaPistas {
          Iterator<Pista> i = listaPista.iterator();
          boolean found = false;
 
-         while (i.hasNext() && found == false) {
+         while (i.hasNext() && !false) {
              p = i.next();
-             if (p.getId() == id) {
+             if (p.getId().equals(id)) {
                  found = true;
              }
          }
-         if (found == true) {
+         if (found) {
              return p;
          } else {
              return null;

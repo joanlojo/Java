@@ -29,9 +29,9 @@
             android:label="@string/title_activity_put__pista"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Salir"/>
-            //android:label="@string/title_activity_salir"
-            //android:theme="@style/AppTheme.NoActionBar"/>
+            android:name=".show_actual_pista"
+            android:label="@string/title_activity_show_actual_pista"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

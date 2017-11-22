@@ -44,7 +44,7 @@ public class put_Pista extends AppCompatActivity {
             public void onClick(View view) {
                 if(!descripcion.getText().toString().equals("") && !identificador.getText().toString().equals("") && !latitud.getText().toString().equals("") && !longitud.getText().toString().equals("") && !idnextPista.getText().toString().equals("")) {
                     // Pista temp = null;
-                    if (listaPistas.findPista(identificador.getText().toString()) != null) {
+                    if (listaPistas.findPista(identificador.getText().toString()) == null) {
                         if (option.getSelectedItemPosition() == 0) {
                             pistaImag pistaI = new pistaImag(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
                             listaPistas.addPista(pistaI);
@@ -60,7 +60,7 @@ public class put_Pista extends AppCompatActivity {
                         finish();
                     }
                     else{
-                        Toast.makeText(view.getContext(), "Ese Id ya existe", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "El ID de esta pista ya existe", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
