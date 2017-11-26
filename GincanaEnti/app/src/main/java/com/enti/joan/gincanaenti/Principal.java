@@ -17,6 +17,10 @@ public class Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);//la R guarda los identificadores de todos los recursos, y los divide por recursos de string, layouts..
+
+        Toolbar toolbar =(Toolbar)findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
+
         pistaImag pistaI = new pistaImag("0", "36", "prueba", 2, 5, "imag");
         pistaAudio pistaA = new pistaAudio("1", "36", "prueba1", 2, 5, "audio");
         pistaText pistaT = new pistaText("2", "336", "prueba2", 2, 5, "text");
