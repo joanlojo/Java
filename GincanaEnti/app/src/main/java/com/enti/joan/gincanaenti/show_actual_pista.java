@@ -37,12 +37,14 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
     private GoogleMap mapa;
 
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_show_actual_pista);
         apiClient = new GoogleApiClient(this).addConnectionCallbacks(this).addApi(LocationServices.API).build();
 
-       /* FragmentMapa fragmentMapa=(FragmentMapa)getFragmentManager().findFragmentById(R.id.FragmentMapa);
+        FragmentMapa fragmentMapa=(FragmentMapa)getFragmentManager().findFragmentById(R.id.fragmentMapa);
         if(fragmentMapa== null)
-            Toast.makeText(this, "Mapa no encontrado", Toast.LENGTH_SHORT).show();*/
-       // fragmentMapa.getMapAsync(this);
+            Toast.makeText(this, "Mapa no encontrado", Toast.LENGTH_SHORT).show();
+        fragmentMapa.getMapAsync(this);
     }
 
     public void onMapReady(GoogleMap p){

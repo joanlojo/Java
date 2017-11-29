@@ -15,8 +15,8 @@
         android:layout_weight="1" />
 
     <fragment
-        android:id="@+id/FragmentPista2"
-        android:name="com.enti.joan.gincanaenti.FragmentPista"
+        android:id="@+id/fragmentMapa"
+        android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
