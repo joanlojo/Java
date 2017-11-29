@@ -10,7 +10,14 @@
     <fragment
         android:id="@+id/FragmentPista"
         android:name="com.enti.joan.gincanaenti.FragmentPista"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <fragment
+        android:id="@+id/FragmentPista2"
+        android:name="com.enti.joan.gincanaenti.FragmentPista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1" />
 </LinearLayout>
