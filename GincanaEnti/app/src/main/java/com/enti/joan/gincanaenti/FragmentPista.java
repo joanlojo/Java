@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public class FragmentPista extends Fragment {
     private View vista;
     public View onCreateView(LayoutInflater inflater, ViewGroup contenedor, Bundle savedInstanceState){
-        vista = inflater.inflate(R.layout.activity_show_actual_pista, contenedor, false);
+        vista = inflater.inflate(R.layout.lista_items, contenedor, false);
         //codigo para inicializar lo que el fragment tenga q mostrar, como un recycler view
         return vista;
     }

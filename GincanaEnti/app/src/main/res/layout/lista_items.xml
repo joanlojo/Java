@@ -10,7 +10,6 @@
         android:layout_below="@+id/idNext"
         android:layout_toEndOf="@+id/imageView"
         android:maxLines="1"
-        android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="12sp" />
 
@@ -22,7 +21,6 @@
         android:layout_toEndOf="@+id/imageView"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="12sp" />
 
@@ -35,7 +33,6 @@
         android:layout_toEndOf="@+id/imageView"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="12sp" />
 
@@ -48,7 +45,6 @@
         android:layout_toEndOf="@+id/imageView"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="12sp" />
 
@@ -60,7 +56,6 @@
         android:layout_below="@+id/latitud"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:text="Cupcake"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="12sp" />
 

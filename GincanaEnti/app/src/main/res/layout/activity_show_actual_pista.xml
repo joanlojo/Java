@@ -6,16 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.enti.joan.gincanaenti.show_actual_pista">
-<fragment
-    android:id="@+id/FragmentMapa"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_weight="1"/>
 
     <fragment
         android:id="@+id/FragmentPista"
         android:name="com.enti.joan.gincanaenti.FragmentPista"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 </LinearLayout>

@@ -64,6 +64,11 @@ public class Principal extends AppCompatActivity {
              AlertDialog alertDialog = alertDialogBuilder.create();
              alertDialog.show();
          }
+         if(id == R.id.id_showActual){
+             Intent i = new Intent(this, show_actual_pista.class);
+             startActivity(i);
+             return true;
+         }
          return super.onOptionsItemSelected(item);
     }
 }

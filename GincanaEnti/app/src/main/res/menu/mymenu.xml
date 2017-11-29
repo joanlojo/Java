@@ -9,6 +9,9 @@
         android:title="ShowHints"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/id_showActual"
+        android:title="Show Actual Pista" />
+    <item
         android:id="@+id/id_about"
         android:actionViewClass="android.widget.SearchView"
         android:icon="@drawable/ic_search_black_24dp"

@@ -1,5 +1,6 @@
 package com.enti.joan.gincanaenti;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -26,7 +27,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.TimeUnit;
 
-public class show_actual_pista extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, OnMapReadyCallback {
+/*public class show_actual_pista extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, OnMapReadyCallback {
     private GoogleApiClient apiClient;
     private GoogleMap mapa;
 
@@ -42,4 +43,23 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
     public void onMapReady(GoogleMap p){
         mapa = p;
     }
-}
+
+    public void onLocationChanged(Location location) {
+    }
+    }
+
+    public void onConnectionFailed(ConnectionResult result) {
+    }
+
+}*/
+
+public class show_actual_pista extends AppCompatActivity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_show_actual_pista);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+    }}
