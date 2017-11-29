@@ -27,6 +27,9 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -39,15 +42,29 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_actual_pista);
-        apiClient = new GoogleApiClient(this).addConnectionCallbacks(this).addApi(LocationServices.API).build();
+        TextView des = (TextView)findViewById(R.id.des);
+        TextView id = (TextView)findViewById(R.id.id);
+        TextView idNext = (TextView)findViewById(R.id.idNext);
+        TextView latitud = (TextView)findViewById(R.id.latitud);
+        TextView longitud = (TextView)findViewById(R.id.longitud);
+        ImageView imagen = (ImageView)findViewById(R.id.imageView);
+        des.setText("Descripcion: " + listaPistas.obtenerP(0).getDescripcion().toString());
+        id.setText("ID: " + listaPistas.obtenerP(0).getId().toString());
+        idNext.setText("ID Next: " + listaPistas.obtenerP(0).getIdNext().toString());
+        latitud.setText("Lat: " + Double.toString(listaPistas.obtenerP(0).getLatitud()));
+        longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
+        int k=listaPistas.obtenerP(0).getTipo();
+        imagen.setImageResource(k);
 
-        FragmentMapa fragmentMapa=(FragmentMapa)getFragmentManager().findFragmentById(R.id.fragmentMapa);
-        if(fragmentMapa== null)
+       apiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addApi(LocationServices.API).build();
+
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa);
+        if (mapFragment == null)
             Toast.makeText(this, "Mapa no encontrado", Toast.LENGTH_SHORT).show();
-        fragmentMapa.getMapAsync(this);
+        mapFragment.getMapAsync(this);
     }
 
-    public void onMapReady(GoogleMap p){
+    public void onMapReady(GoogleMap p) {
         mapa = p;
     }
 
@@ -69,8 +86,8 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
 
     public void onProviderDisabled(String proveedor) {
     }
-    public void onConnected(@Nullable Bundle bundle) {
 
+    public void onConnected(@Nullable Bundle bundle) {
 
     }
 }
