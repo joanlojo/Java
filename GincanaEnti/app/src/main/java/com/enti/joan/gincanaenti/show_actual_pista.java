@@ -35,13 +35,14 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.TimeUnit;
 
-public class show_actual_pista extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, OnMapReadyCallback {
+/*public class show_actual_pista extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, OnMapReadyCallback {
     private GoogleApiClient apiClient;
     private GoogleMap mapa;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_actual_pista);
+
         TextView des = (TextView)findViewById(R.id.des);
         TextView id = (TextView)findViewById(R.id.id);
         TextView idNext = (TextView)findViewById(R.id.idNext);
@@ -90,9 +91,9 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
     public void onConnected(@Nullable Bundle bundle) {
 
     }
-}
+}*/
 
-/*public class show_actual_pista extends AppCompatActivity{
+public class show_actual_pista extends AppCompatActivity{
     private RecyclerView recyclerView;
     public Adaptador adaptador;
     private RecyclerView.LayoutManager layoutManager;
@@ -113,4 +114,4 @@ public class show_actual_pista extends AppCompatActivity implements GoogleApiCli
         longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
         int k=listaPistas.obtenerP(0).getTipo();
         imagen.setImageResource(k);
-    }}*/
+    }}
