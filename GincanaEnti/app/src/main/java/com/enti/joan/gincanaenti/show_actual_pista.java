@@ -27,9 +27,13 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -93,10 +97,12 @@ import java.util.concurrent.TimeUnit;
     }
 }*/
 
-public class show_actual_pista extends AppCompatActivity{
+public class show_actual_pista extends AppCompatActivity implements OnMapReadyCallback{
     private RecyclerView recyclerView;
     public Adaptador adaptador;
     private RecyclerView.LayoutManager layoutManager;
+    private GoogleMap mMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,4 +120,20 @@ public class show_actual_pista extends AppCompatActivity{
         longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
         int k=listaPistas.obtenerP(0).getTipo();
         imagen.setImageResource(k);
-    }}
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentMap);
+        mapFragment.getMapAsync(this);
+    }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+}
+
+
