@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -87,5 +89,48 @@ public class ShowHints extends AppCompatActivity implements View.OnLongClickList
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
         return true;
+    }
+
+    @Override public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.mymenu,menu);
+        return true;
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.id_about){
+            Intent i = new Intent(this, About.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.id_ShowHint){
+            Intent i = new Intent(this, ShowHints.class);
+            startActivity(i);
+            return true;
+        }
+        if(id==R.id.id_Exit){
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("Salir");
+            alertDialogBuilder.setMessage("Estas seguro que deseas salir de la app ?");
+            alertDialogBuilder.setPositiveButton("ok",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    finishAffinity();
+                }
+            });
+            alertDialogBuilder.setNegativeButton("cancel",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
+        if(id == R.id.id_showActual){
+            Intent i = new Intent(this, show_actual_pista.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
