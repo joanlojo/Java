@@ -18,6 +18,7 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
+
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -31,19 +32,33 @@
             android:orientation="vertical"
             tools:context="com.enti.joan.gincanaenti.show_actual_pista">
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pista Actual"
+                tools:text="Pista Actual" />
+
             <fragment
                 android:id="@+id/FragmentPista"
                 android:name="com.enti.joan.gincanaenti.FragmentPista"
                 android:layout_width="match_parent"
                 android:layout_height="47dp" />
 
-            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:map="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Posicion Actual"
+                tools:text="Posicion Actual" />
+
+            <fragment
                 android:id="@+id/fragmentMap"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="444dp"
+                android:layout_height="496dp"
                 tools:context="com.enti.joan.gincanaenti.Maps" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

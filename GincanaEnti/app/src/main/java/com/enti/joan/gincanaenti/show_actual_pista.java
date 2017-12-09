@@ -103,15 +103,13 @@ import java.util.concurrent.TimeUnit;
 }*/
 
 public class show_actual_pista extends AppCompatActivity implements OnMapReadyCallback{
-    private RecyclerView recyclerView;
-    public Adaptador adaptador;
-    private RecyclerView.LayoutManager layoutManager;
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_actual_pista);
+
         TextView des = (TextView)findViewById(R.id.des);
         TextView id = (TextView)findViewById(R.id.id);
         TextView idNext = (TextView)findViewById(R.id.idNext);
@@ -137,8 +135,8 @@ public class show_actual_pista extends AppCompatActivity implements OnMapReadyCa
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(41.40363f, 2.174356f);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Sagrada Familia"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
     @Override public boolean onCreateOptionsMenu(Menu menu){

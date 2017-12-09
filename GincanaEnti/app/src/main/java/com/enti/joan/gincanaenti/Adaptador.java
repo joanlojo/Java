@@ -36,7 +36,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         public TextView latitud;
         public TextView longitud;
         public ImageView imagen;
-        public Spinner option;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -46,7 +45,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             latitud = (TextView)itemView.findViewById(R.id.latitud);
             longitud = (TextView)itemView.findViewById(R.id.longitud);
             imagen = (ImageView)itemView.findViewById(R.id.imageView);
-            option = (Spinner)itemView.findViewById(R.id.spinner);
         }
     }
     //Mètode obligatori que genera un ViewHolder a partir de l'id de l'XML list_item
@@ -75,7 +73,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         holder.longitud.setText("Long: " + Double.toString(p.getLongitud()));
         // para la imagen, hacer tres ifs segun el spinner y poner la imagen
         int k=p.getTipo();
-           holder.imagen.setImageResource(k);
+        holder.imagen.setImageResource(k);
        }
     //Mètode obligatori que retorna el número d'elements total de la llista
     @Override public int getItemCount() {
