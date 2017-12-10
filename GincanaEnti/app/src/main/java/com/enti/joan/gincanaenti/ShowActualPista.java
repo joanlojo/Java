@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,64 +19,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-/*public class ShowActualPista extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, OnMapReadyCallback {
-    private GoogleApiClient apiClient;
-    private GoogleMap mapa;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_actual_pista);
-
-        TextView des = (TextView)findViewById(R.id.des);
-        TextView id = (TextView)findViewById(R.id.id);
-        TextView idNext = (TextView)findViewById(R.id.idNext);
-        TextView latitud = (TextView)findViewById(R.id.latitud);
-        TextView longitud = (TextView)findViewById(R.id.longitud);
-        ImageView imagen = (ImageView)findViewById(R.id.imageView);
-        des.setText("Descripcion: " + listaPistas.obtenerP(0).getDescripcion().toString());
-        id.setText("ID: " + listaPistas.obtenerP(0).getId().toString());
-        idNext.setText("ID Next: " + listaPistas.obtenerP(0).getIdNext().toString());
-        latitud.setText("Lat: " + Double.toString(listaPistas.obtenerP(0).getLatitud()));
-        longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
-        int k=listaPistas.obtenerP(0).getTipo();
-        imagen.setImageResource(k);
-
-       apiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addApi(LocationServices.API).build();
-
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.fragmentMapa);
-        if (mapFragment == null)
-            Toast.makeText(this, "Mapa no encontrado", Toast.LENGTH_SHORT).show();
-        mapFragment.getMapAsync(this);
-    }
-
-    public void onMapReady(GoogleMap p) {
-        mapa = p;
-    }
-
-    public void onLocationChanged(Location location) {
-    }
-
-
-    public void onConnectionFailed(ConnectionResult result) {
-    }
-
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-    }
-
-    public void onConnectionSuspended(int i) {
-    }
-
-    public void onStatusChanged(String proveedor, int estado, Bundle extras) {
-    }
-
-    public void onProviderDisabled(String proveedor) {
-    }
-
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-}*/
-
 public class ShowActualPista extends AppCompatActivity implements OnMapReadyCallback{
     private GoogleMap mMap;
 
@@ -83,21 +26,24 @@ public class ShowActualPista extends AppCompatActivity implements OnMapReadyCall
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_actual_pista);
-
-        TextView des = (TextView)findViewById(R.id.des);
-        TextView id = (TextView)findViewById(R.id.id);
-        TextView idNext = (TextView)findViewById(R.id.idNext);
-        TextView latitud = (TextView)findViewById(R.id.latitud);
-        TextView longitud = (TextView)findViewById(R.id.longitud);
-        ImageView imagen = (ImageView)findViewById(R.id.imageView);
-        des.setText("Descripcion: " + listaPistas.obtenerP(0).getDescripcion().toString());
-        id.setText("ID: " + listaPistas.obtenerP(0).getId().toString());
-        idNext.setText("ID Next: " + listaPistas.obtenerP(0).getIdNext().toString());
-        latitud.setText("Lat: " + Double.toString(listaPistas.obtenerP(0).getLatitud()));
-        longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
-        int k=listaPistas.obtenerP(0).getTipo();
-        imagen.setImageResource(k);
-
+        if(listaPistas.getLength() == 0) {
+            Toast.makeText(this, "No hay ninguna pista", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            TextView des = (TextView) findViewById(R.id.des);
+            TextView id = (TextView) findViewById(R.id.id);
+            TextView idNext = (TextView) findViewById(R.id.idNext);
+            TextView latitud = (TextView) findViewById(R.id.latitud);
+            TextView longitud = (TextView) findViewById(R.id.longitud);
+            ImageView imagen = (ImageView) findViewById(R.id.imageView);
+            des.setText("Descripcion: " + listaPistas.obtenerP(0).getDescripcion().toString());
+            id.setText("ID: " + listaPistas.obtenerP(0).getId().toString());
+            idNext.setText("ID Next: " + listaPistas.obtenerP(0).getIdNext().toString());
+            latitud.setText("Lat: " + Double.toString(listaPistas.obtenerP(0).getLatitud()));
+            longitud.setText("Long: " + Double.toString(listaPistas.obtenerP(0).getLongitud()));
+            int k = listaPistas.obtenerP(0).getTipo();
+            imagen.setImageResource(k);
+        }
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentMap);
         mapFragment.getMapAsync(this);
 
