@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context="com.enti.joan.gincanaenti.show_actual_pista">
+            tools:context="com.enti.joan.gincanaenti.ShowActualPista">
 
             <TextView
                 android:id="@+id/textView3"

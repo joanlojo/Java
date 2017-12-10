@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.enti.joan.gincanaenti.put_Pista"
+    tools:context="com.enti.joan.gincanaenti.AddPista"
     tools:showIn="@layout/activity_put__pista">
 
     <LinearLayout

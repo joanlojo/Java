@@ -76,7 +76,7 @@ public class About extends AppCompatActivity {
             alertDialog.show();
         }
         if(id == R.id.id_showActual){
-            Intent i = new Intent(this, show_actual_pista.class);
+            Intent i = new Intent(this, ShowActualPista.class);
             startActivity(i);
             return true;
         }

@@ -32,11 +32,11 @@
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".put_Pista"
+            android:name=".AddPista"
             android:label="@string/title_activity_put__pista"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".show_actual_pista"
+            android:name=".ShowActualPista"
             android:label="@string/title_activity_show_actual_pista"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
