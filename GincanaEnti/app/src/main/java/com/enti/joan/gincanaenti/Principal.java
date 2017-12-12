@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,6 +23,8 @@ public class Principal extends AppCompatActivity {
         listaPistas.addPista(pistaI);
         listaPistas.addPista(pistaA);
         listaPistas.addPista(pistaT);
+
+
     }
     @Override public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.mymenu,menu);

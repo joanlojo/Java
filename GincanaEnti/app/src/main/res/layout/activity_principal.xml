@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     android:elevation="4dp"
     android:minHeight="?attr/actionBarSize"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     tools:context="com.enti.joan.gincanaenti.Principal">
 
     <LinearLayout
