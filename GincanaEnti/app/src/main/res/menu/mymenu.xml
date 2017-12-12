@@ -5,22 +5,25 @@
     <item
         android:id="@+id/id_ShowHint"
         android:actionViewClass="android.widget.SearchView"
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@mipmap/ic_launcher"
         android:title="ShowHints"
         app:showAsAction="never"/>
     <item
         android:id="@+id/id_showActual"
-        android:title="Show Actual Pista" />
+        android:title="Show Actual Pista"
+        android:actionViewClass="android.widget.SearchView"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
     <item
         android:id="@+id/id_about"
         android:actionViewClass="android.widget.SearchView"
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@mipmap/ic_launcher"
         android:title="About"
         app:showAsAction="never"/>
     <item
         android:id="@+id/id_Exit"
         android:actionViewClass="android.widget.SearchView"
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@mipmap/ic_launcher"
         android:title="Exit"
         app:showAsAction="never" />
 </menu>
