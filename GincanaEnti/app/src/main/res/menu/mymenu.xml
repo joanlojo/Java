@@ -5,9 +5,10 @@
     <item
         android:id="@+id/id_ShowHint"
         android:actionViewClass="android.widget.SearchView"
+        android:enabled="true"
         android:icon="@mipmap/ic_launcher"
         android:title="ShowHints"
-        app:showAsAction="withText"/>
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/id_showActual"
         android:title="Show Actual Pista"
