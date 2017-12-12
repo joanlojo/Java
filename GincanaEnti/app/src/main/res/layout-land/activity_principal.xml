@@ -1,48 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/appbar"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:elevation="4dp"
-    android:minHeight="?attr/actionBarSize"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.enti.joan.gincanaenti.Principal">
 
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:gravity="top|center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
 
-        <Button
-            android:id="@+id/GestionarP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="showPista"
-            android:text="Gestionar Pistas" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
-        <Button
-            android:id="@+id/MostrarP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="showPistaActual"
-            android:text="Mostrar Pistas" />
-
-        <Button
-            android:id="@+id/About"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="showAbout"
-            android:text="About" />
-
-        <Button
-            android:id="@+id/Salir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Exit"
-            android:text="Salir" />
-    </LinearLayout>
-</android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.CoordinatorLayout>

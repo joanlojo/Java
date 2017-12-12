@@ -14,7 +14,7 @@ public class Principal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_principal);//la R guarda los identificadores de todos los recursos, y los divide por recursos de string, layouts..
+        setContentView(R.layout.activity_principal);//la R guarda los identificadores de todos los recursos, y los divide por recursos de string, layouts..
 
         pistaImag pistaI = new pistaImag("0", "36", "prueba", 2, 5, "imag");
         pistaAudio pistaA = new pistaAudio("1", "36", "prueba1", 2, 5, "audio");
@@ -24,6 +24,8 @@ public class Principal extends AppCompatActivity {
         listaPistas.addPista(pistaA);
         listaPistas.addPista(pistaT);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
 
     }
     @Override public boolean onCreateOptionsMenu(Menu menu){

@@ -13,10 +13,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_inicio"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_inicio"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Principal">
+        <activity
+            android:name=".Principal"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,6 +42,7 @@
             android:name=".ShowActualPista"
             android:label="@string/title_activity_show_actual_pista"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,8 +55,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".GincanaEnti" />
-        <activity android:name=".Home"></activity>
+
     </application>
 
 </manifest>

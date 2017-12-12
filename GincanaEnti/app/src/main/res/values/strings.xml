@@ -10,7 +10,7 @@
     <string name="title_activity_show_hints">ShowHints</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_put__pista">put_Pista</string>
-    <string name="title_activity_salir">Salir</string>
+    <string name="title_activity_principal">Principal</string>
     <string name="title_activity_show_actual_pista">show_actual_pista</string>
     <string name="title_activity_maps">Map</string>
 </resources>
