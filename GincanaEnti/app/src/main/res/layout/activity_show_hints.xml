@@ -26,15 +26,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/stat_notify_more" />
 
-    <Button
-        android:id="@+id/btn_salir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|right"
-        android:text="Atras"
-        app:layout_anchor="@+id/include2"
-        app:layout_anchorGravity="bottom|left" />
-
     <include
         android:id="@+id/include2"
         layout="@layout/content_show_hints" />

@@ -18,21 +18,13 @@ public class ShowHints extends AppCompatActivity implements View.OnLongClickList
     //private ArrayList<String> listaVersiones;
     private RecyclerView recyclerView;
     public Adaptador adaptador;
-    private Button btn_salir;
     private RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_show_hints);
-        btn_salir = (Button)findViewById(R.id.btn_salir);
 
-        btn_salir.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                finish();
-            }
-        });
         recyclerView =(RecyclerView)findViewById(R.id.recycler_view);
         adaptador = new Adaptador(this);
         adaptador.setonLongClickListener(this);
