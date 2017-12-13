@@ -17,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddPista extends AppCompatActivity {
-    private Button salir;
 
     boolean relleno = false;
     @Override
@@ -35,15 +34,7 @@ public class AddPista extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
         setSupportActionBar(toolbar);
 
-        salir = (Button)findViewById(R.id.salir);
-        salir.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Snackbar.make(v, "Operacion cancelada", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                finish();
-            }
-        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.enviarP);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -77,11 +77,5 @@
             android:hint="IdNext"
             android:inputType="number" />
 
-        <Button
-            android:id="@+id/salir"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Cancelar" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
