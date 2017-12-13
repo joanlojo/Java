@@ -71,7 +71,6 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         holder.idNext.setText("ID Next: " + p.getIdNext().toString());
         holder.latitud.setText("Lat: " + Double.toString(p.getLatitud()));
         holder.longitud.setText("Long: " + Double.toString(p.getLongitud()));
-        // para la imagen, hacer tres ifs segun el spinner y poner la imagen
         int k=p.getTipo();
         holder.imagen.setImageResource(k);
        }

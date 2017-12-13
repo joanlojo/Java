@@ -32,8 +32,8 @@ public class AddPista extends AppCompatActivity {
         final EditText longitud = (EditText)findViewById(R.id.longitud);
         final EditText idnextPista = (EditText)findViewById(R.id.idNext);
 
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
-        //setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
 
         salir = (Button)findViewById(R.id.salir);
         salir.setOnClickListener(new View.OnClickListener(){
@@ -78,7 +78,7 @@ public class AddPista extends AppCompatActivity {
             }
        });
     }
-   /* @Override public boolean onCreateOptionsMenu(Menu menu){
+    @Override public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.mymenu,menu);
         return true;
     }
@@ -119,6 +119,6 @@ public class AddPista extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
 }

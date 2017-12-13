@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/include3"
+        layout="@layout/content_put__pista"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/enviarP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|left"
+        android:layout_width="46dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom|right"
         android:clickable="true"
+
         app:fabSize="mini"
-        app:layout_anchor="@+id/nestedScrollView"
         app:layout_anchorGravity="bottom|right"
-        app:srcCompat="@android:drawable/ic_menu_send" />
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="323dp"
+        tools:layout_editor_absoluteY="450dp" />
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="480dp"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <include
-            layout="@layout/content_put__pista"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.constraint.ConstraintLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

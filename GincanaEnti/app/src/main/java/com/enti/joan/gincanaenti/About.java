@@ -14,18 +14,18 @@ import android.view.View;
 import android.widget.Button;
 
 public class About extends AppCompatActivity {
-    private Button btn_salir;
+    //private Button btn_salir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        btn_salir = (Button)findViewById(R.id.btn_salir);
+       /* btn_salir = (Button)findViewById(R.id.btn_salir);
         btn_salir.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 finish();
             }
-        });
+        });*/
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.appbar);
         setSupportActionBar(toolbar);

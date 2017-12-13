@@ -54,7 +54,6 @@ public class ShowActualPista extends AppCompatActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng bcn = new LatLng(41.40363f, 2.174356f);
         mMap.addMarker(new MarkerOptions().position(bcn).title("Sagrada Familia"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(bcn));
