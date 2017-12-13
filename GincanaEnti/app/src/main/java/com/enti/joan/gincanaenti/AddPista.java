@@ -54,6 +54,11 @@ public class AddPista extends AppCompatActivity {
                             listaPistas.addPista(pistaA);
 
                         }
+                        else if (option.getSelectedItemPosition() == 3) {
+                            pistaVideo pistaV = new pistaVideo(identificador.getText().toString(), idnextPista.getText().toString(), descripcion.getText().toString(), Double.parseDouble(latitud.getText().toString()), Double.parseDouble(latitud.getText().toString()), "text");
+                            listaPistas.addPista(pistaV);
+
+                        }
                         setResult(RESULT_OK);
                         finish();
                     }

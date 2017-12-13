@@ -6,6 +6,7 @@
         <item>Imagen</item>
         <item>Texto</item>
         <item>Sonido</item>
+        <item>Video</item>
     </string-array>
     <string name="title_activity_show_hints">ShowHints</string>
     <string name="title_activity_about">About</string>
